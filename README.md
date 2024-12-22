@@ -2,7 +2,7 @@ BB84 Protocol Simulation with Ideal and Noisy Circuits
 
 This repository contains Python implementations of the BB84 quantum key distribution protocol, executed using AWS Braket. The implementations simulate both an ideal quantum circuit and a noisy circuit with 10% bit-flip noise. The circuits are designed to explore quantum communication in perfect and error-prone environments.
 
-Contents ideal_8_bits.py: Simulates the BB84 protocol with an ideal 8-bit quantum circuit. 16_noise.py: Simulates the BB84 protocol with 10% bit-flip noise applied to the quantum circuit.
+Contents ideal_8_bits.py: Simulates the BB84 protocol with an ideal 8-bit quantum circuit. 8_noise.py: Simulates the BB84 protocol with 10% bit-flip noise applied to the quantum circuit.
 
 Ideal 8-Bit BB84 Protocol
 Overview The ideal implementation of the BB84 protocol models a noise-free environment, enabling the generation and distribution of a secret key using quantum states.
@@ -40,7 +40,7 @@ Running the Simulations
 
 Ideal Circuit: Run the ideal BB84 protocol simulation: python ideal_8_bits.py
 
-Noisy Circuit: Run the BB84 protocol simulation with 10% bit-flip noise: python 16_noise.py
+Noisy Circuit: Run the BB84 protocol simulation with 10% bit-flip noise: python 8_noise.py
 
 Results: The results of each simulation include: Alice's bitstring and bases. Bob's bases and measurements. The secret key (ideal and noisy). Communication time. Quantum circuit representations.
 
