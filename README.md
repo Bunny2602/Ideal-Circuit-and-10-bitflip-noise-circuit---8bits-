@@ -1,2 +1,48 @@
-# Ideal-Circuit-and-10-bitflip-noise-circuit---8bits-
-About Simulates a 8-bit ideal quantum circuit with 10% bit-flip noise, leveraging AWS Braket for execution. Includes circuit design, noise modeling, and analysis of quantum computation under error conditions. Ideal for exploring error resilience and quantum noise impacts in quantum computing.
+BB84 Protocol Simulation with Ideal and Noisy Circuits
+
+This repository contains Python implementations of the BB84 quantum key distribution protocol, executed using AWS Braket. The implementations simulate both an ideal quantum circuit and a noisy circuit with 10% bit-flip noise. The circuits are designed to explore quantum communication in perfect and error-prone environments.
+
+Contents ideal_8_bits.py: Simulates the BB84 protocol with an ideal 8-bit quantum circuit. 16_noise.py: Simulates the BB84 protocol with 10% bit-flip noise applied to the quantum circuit.
+
+Ideal 8-Bit BB84 Protocol
+Overview The ideal implementation of the BB84 protocol models a noise-free environment, enabling the generation and distribution of a secret key using quantum states.
+
+Key Steps Sender (Alice): Generates a random 8-bit bitstring and a corresponding random set of measurement bases (rectilinear and diagonal). Prepares quantum states based on the bitstring and bases.
+
+Receiver (Bob): Chooses random measurement bases. Measures the received qubits in his chosen bases.
+
+Key Agreement: Alice and Bob compare their bases to identify matching ones. A secret key is generated based on the matching bases.
+
+Output: Alice's bitstring and bases. Bob's bases and measurements. The secret key generated from the matching bases. Quantum circuit visualization. Communication time.
+
+BB84 Protocol with 10% Bit-Flip Noise
+Overview This implementation introduces 10% bit-flip noise to the ideal circuit, simulating real-world error scenarios.
+
+Key Steps
+
+Sender (Alice): Same as in the ideal protocol.
+
+Noise Application: Applies bit-flip noise to 10% of the qubits after preparation. Tracks noisy operations for analysis.
+
+Receiver (Bob): Same as in the ideal protocol.
+
+Key Agreement: Compares bases to generate keys for both ideal and noisy scenarios.
+
+Output: Alice's bitstring and bases. Bob's bases and measurements (ideal and noisy). The secret keys (ideal and noisy). Quantum circuit visualizations (before and after noise). Positions where noise was applied. Communication time.
+
+Dependencies Python 3.x AWS Braket SDK Installation
+
+Install the AWS Braket SDK: pip install amazon-braket-sdk
+
+Clone this repository: git clone https://github.com/your-repo/bb84-simulation.git cd bb84-simulation
+
+Running the Simulations
+
+Ideal Circuit: Run the ideal BB84 protocol simulation: python ideal_8_bits.py
+
+Noisy Circuit: Run the BB84 protocol simulation with 10% bit-flip noise: python 16_noise.py
+
+Results: The results of each simulation include: Alice's bitstring and bases. Bob's bases and measurements. The secret key (ideal and noisy). Communication time. Quantum circuit representations.
+
+Notes: Replace the LocalSimulator device with AwsDevice for execution on AWS Braket. Adjust the num_bits parameter to simulate more or fewer bits.
+
